@@ -1,0 +1,55 @@
+<!-- Login Form -->
+<div
+  class="container"
+  style="max-width: 400px; margin: 0 auto; padding-top: 50px;"
+>
+  <div id="login-form" class="form active">
+
+    <h2 style="color: rgb(38, 173, 47);">Login</h2>
+
+    {{#if msg}}
+      <div class="alert alert-danger mt-3">{{msg}}</div>
+    {{/if}}
+
+    <form action="/verify" method="post">
+      <div class="form-group">
+        <label for="login-email">Username:</label>
+        <input
+          type="text"
+          id="login-email"
+          placeholder="User name"
+          name="username"
+          class="form-control"
+        />
+        <p id="login-email-error" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="login-password">Password:</label>
+        <input
+          type="password"
+          id="login-password"
+          placeholder="Enter your password"
+          name="password"
+          class="form-control"
+        />
+        <p id="login-password-error" class="error"></p>
+      </div>
+
+      <div class="form-group mt-3">
+        <button
+          type="submit"
+          class="btn btn-success w-100"
+          onclick="validateLogin()"
+        >Login</button>
+      </div>
+    </form>
+
+    <a
+      href="javascript:void(0);"
+      class="toggle-link d-block text-center mt-3"
+      onclick="toggleForm('create-account')"
+    >Don't have an account? Create one</a>
+
+  </div>
+</div>
